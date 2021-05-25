@@ -9,12 +9,15 @@ public class DeployBlock : MonoBehaviour
     public float shipSpawnTime2 = 1.0f;
     public float lampraySpawnTime = 4.0f;
 
+    private GameObject canvas;
 
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         StartCoroutine(blockSpawning());
+        canvas = GameObject.Find("Canvas");
+        canvas.SetActive(false);    
     }
 
 
@@ -133,16 +136,20 @@ public class DeployBlock : MonoBehaviour
         spawnBlock();         
         yield return new WaitForSeconds(1);
         spawnBlock(); 
-        yield return new WaitForSeconds(0.5);
+        yield return new WaitForSeconds(0.5f);
         spawnBlock();
-        yield return new WaitForSeconds(0.5);
+        yield return new WaitForSeconds(0.5f);
         spawnBlock();     
-        yield return new WaitForSeconds(0.5);
+        yield return new WaitForSeconds(0.5f);
         spawnBlock(); 
-        yield return new WaitForSeconds(0.5);
+        yield return new WaitForSeconds(0.5f);
         spawnBlock();      
-        yield return new WaitForSeconds(0.5);
+        yield return new WaitForSeconds(0.5f);
         spawnBlock();     
-        //10:26               
+        //10:26
+        
+        yield return new WaitForSeconds(5.0f);
+
+        canvas.SetActive(true);              
     }
 }
