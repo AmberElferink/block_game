@@ -55,4 +55,14 @@ public class Cube : MonoBehaviour
             Destroy(this.gameObject);
         
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Sword")
+        {
+            collision.gameObject.GetComponent<AudioSource>().Play();
+            Destroy(this.gameObject);
+        }
+
+    }
 }
