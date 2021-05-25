@@ -20,7 +20,7 @@ public class Cube : MonoBehaviour
         Vector3 cubePos = this.transform.position;
         Vector3 velDirection = (cubePos - cameraPos).normalized;
         rb = GetComponent<Rigidbody>();
-        Debug.Log("hello there");
+        // Debug.Log("hello there");
 
         rb.velocity = -speed*velDirection;
 
@@ -32,23 +32,23 @@ public class Cube : MonoBehaviour
     void Update()
     {
         //destroy block if clicked on
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100.0f) && hit.transform.gameObject != null)
-            {
-                // here you need to insert a check if the object is really a Cube
-                // for example by tagging all cubes with "Cube" and checking hit.transform.tag
-                if (hit.transform.tag == "Cube")
-                {    // play sound
-                    source.Play();
-                    Debug.Log("hit");
-                    GameObject.Destroy(hit.transform.gameObject);
-                }
-            }
-        }
+        //     RaycastHit hit;
+        //     if (Physics.Raycast(ray, out hit, 100.0f) && hit.transform.gameObject != null)
+        //     {
+        //         // here you need to insert a check if the object is really a Cube
+        //         // for example by tagging all cubes with "Cube" and checking hit.transform.tag
+        //         if (hit.transform.tag == "Cube")
+        //         {    // play sound
+        //             source.Play();
+        //             Debug.Log("hit");
+        //             GameObject.Destroy(hit.transform.gameObject);
+        //         }
+        //     }
+        // }
 
         //destroy block when it moves behind the camera
         if (this.transform.position.x > 1)
@@ -60,8 +60,13 @@ public class Cube : MonoBehaviour
     {
         if (collision.gameObject.name == "Sword")
         {
-            collision.gameObject.GetComponent<AudioSource>().Play();
-            Destroy(this.gameObject);
+            Vector3 swordVelocity = collision.gameObject.GetComponent<Track_velocity>().velocity;
+
+            if(swordVelocity.magnitude >= 0.1)
+            {
+                collision.gameObject.GetComponent<AudioSource>().Play();
+                Destroy(this.gameObject);
+            }
         }
 
     }
