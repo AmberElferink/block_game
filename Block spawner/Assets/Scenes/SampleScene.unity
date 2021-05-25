@@ -1141,7 +1141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockPrefab: {fileID: 4077059693657473879, guid: 13e1ee2e0cac52841a3be65dbd64c40b, type: 3}
-  respawnTime: 3
+  shipSpawnTime1: 1.5
+  shipSpawnTime2: 1
+  lampraySpawnTime: 4
 --- !u!1 &1028753780
 GameObject:
   m_ObjectHideFlags: 0
