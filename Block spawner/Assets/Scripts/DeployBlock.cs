@@ -114,6 +114,35 @@ public class DeployBlock : MonoBehaviour
         yield return new WaitForSeconds(1);
         spawnBlock(); //9:54   
         yield return new WaitForSeconds(4);
-        spawnBlock(); //9:58 boulder          
+        spawnBlock(); //9:58 boulder 
+
+        //10:12 tongue
+        spawnBlock();         
+        yield return new WaitForSeconds(1);
+        spawnBlock(); 
+        yield return new WaitForSeconds(1);
+        spawnBlock(); //10:14
+        yield return new WaitForSeconds(1);
+        spawnBlock();//10:15       
+        yield return new WaitForSeconds(1);
+        spawnBlock();//10:16 
+
+        yield return new WaitForSeconds(6);
+
+        //10:22 free hit cthulu
+        spawnBlock();         
+        yield return new WaitForSeconds(1);
+        spawnBlock(); 
+        yield return new WaitForSeconds(0.5);
+        spawnBlock();
+        yield return new WaitForSeconds(0.5);
+        spawnBlock();     
+        yield return new WaitForSeconds(0.5);
+        spawnBlock(); 
+        yield return new WaitForSeconds(0.5);
+        spawnBlock();      
+        yield return new WaitForSeconds(0.5);
+        spawnBlock();     
+        //10:26               
     }
 }
