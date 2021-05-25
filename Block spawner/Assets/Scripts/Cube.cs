@@ -12,6 +12,7 @@ public class Cube : MonoBehaviour
     void Start()
     {
         //give cube the 'cube' tag
+
         gameObject.tag = "Cube";
 
         //add velocity to block in direction of the camera
